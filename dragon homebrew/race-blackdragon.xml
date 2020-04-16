@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<elements>
+    <info>
+        <name>Elemental Dragon</name>
+        <description></description>
+        <author url="https://toyhou.se/corviq">Krowe Thompson</author>
+        <update version="0.0.1">
+            <file name="race-blackdragon.xml" url="WIP" />
+        </update>
+    </info>
+
+    <element name="Black Dragon" type="Race" source="Homebrew" id="ID_RACE_BLACKDRAGON">
+        <description>
+            <p class="flavor">The rarest and most vicious of all dragons, Black Dragons are filled with magic. They are born with acid in their blood and are feared across the entire continent, above and below the ground. They are said to be harbingers of death and evil, and the mere appearance of one is said to bring about terrible things, though nobody can prove if that is true.</p>
+            <h4>FEARSOME NIGHT WALKERS</h4>
+            <p>Black Dragons sometimes are referred to as 'night walkers' since they are mostly seen at night, and they blend into darkness and the light sky perfectly other than their wings and eyes.</p>
+            <p class="indent">The rarity of Black Dragons adds to the fear surrounding them. Some even refuse to believe they are real due to their rarity, earning them many legends and places in folklore.</p>
+            <h4>VIOLENT MONSTERS</h4>
+            <p>Due to being so outcast and feared by society, Black Dragons are often just as fierce as they are rumoured to be, having grown with nothing but hatred for them. However, it is not a biological issue, and Black Dragons can be just as kind as they can be cruel if they have the right environment.</p>
+            <p class="indent">Some Black Dragons shine with a different colour when the light hits their scales, though their darkness always shows. These dragons are said to be less vicious than others of their kind, but nobody can prove or disprovem it.</p>
+            <p class="indent">It is said that the dragons with the red eyes are the most dangerous, when there is no difference between the behaviours of dragons with different eye colours.</p>
+            <h4>VAMPIRE ESSENCE</h4>
+            <p>Black Dragons naturally have acidic blood, though it does have magical effects too.
+            <h4>BLACK DRAGON NAMES</h4>
+            <p>Black Dragons usually have short names that are easy to say and read. They usually aren't very long, and names with two parts will always consist of short sounds or words. Male names usually consist of rarer letters, whereas female names tend to consist mainly of soft and common letters.</p>
+            <p>
+            <b>Male Names: </b>Zaro, Tavi, Xeno, Ura'vo, Saf're
+            <br/>
+            <b>Female Names: </br>Nova, Lora, Eros, Fa'ria, Nos'tar
+            <br/>
+            <b>Neutral Names: </br>Zanova, Xeria, Rivia, Ri'loris, Noc'safi
+            <br/>
+            <p>
+            <h4>BLACK DRAGON TRAITS</h4>
+            <p>Black Dragons all share a set of traits that are unique to them and no other dragons.</p>
+            <span class="feature">Ability Score Increase.</span>Your intelligence score increases by 2, and your constitution score increases by 1.
+            <br />
+            <span class="feature">Age.</span>Black Dragons reach maturity at the age of twenty. There have been no deaths recorded due to old age, so their lifespan is unknown.
+            <br />
+            <span class="feature">Alignment.</span>Black Dragons tend to be neutral, and often on the more chaotic side.
+            <br />
+            <span class="feature">Size.</span>Black Dragons are, on average, 8-9ft. tall, larger than most dragons.
+            <br />
+            <span class="feature">Speed.</span>>Your base walking speed if 30 feet.
+            <br />
+            <span class="feature">Acidic Breath Weapon.</span>You can use your action to exhale destructive energy. When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 acidic damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.
+            <br />
+            <span class="feature">Vampire Essence.</span>If a creature or item comes into contact with your blood, they will be subject to burns and their life force will be partially drained. If ingested, it will do 10d10 acidic or necrotic damage. When touched, it will do 3d6 acidic or necrotic damage, 4d6 damage at 8th level, 5d6 at 11th level, and 6d6 at 16th level.
+            <span class="feature">Damage Resistance.</span>You have resistance to acidic damage.
+            <br />
+            <span class="feature">Languages.</span>You can speak, read, and write Common and Ancient Lurquahn. Ancient Lurquahn is not often used any longer, but as they are an ancient species, most of them are raised with the language. This often considered the language of Black Dragons because of this.
+            <br />
+            <p>
+        </description>
+        <sheet display="false" />
+        <setters>
+            <set name="names" type="male">Zaro, Tavi, Xeno, Ura'vo, Saf're</set>
+            <set name="names" type="female">Nova, Lora, Eros, Fa'ria, Nos'tar</set>
+            <set name="names" type="neutral">Zanova, Xeria, Rivia, Ri'loris, Noc'safi</set>
+            <set name="names-format">{{name}}</set>
+            <set name="height" modifier="2d8">8'11"</set>
+            <set name="weight" modifier="2d6">31.44 lb.</set>
+        </setters>
+        <rules>
+            <stat name="intelligence" value="2" requirements="!ID_RACE_BLACKDRAGON" />
+            <stat name="constitution" value="1" requirements="!ID_RACE_BLACKDRAGON" />
+            <stat name="innate speed" value="30" bonus="base" />
+            <grant type="Size" id="ID_SIZE_LARGE" />
+            <grant type="Language" id="ID_LANGUAGE_COMMON" />
+            <grant type="Language" id="ID_LANGUAGE_ANCIENTLURQUAHN" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_ACID_BREATH" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_ACID_RES" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_ACID_BLOOD" />
+            <select type="Race Variant" name="Corrupted Black Dragon" supports="Black Dragon" optional="true" />
+        </rules>
+    </element>
+    <element name="Acidic Breath" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_ACID_BREATH">
+        <description>
+            <p>You can use your action to exhale destructive energy.</p>
+            <p>When you use your breath weapon, each creature in the area of the exhalation must make a Dexterity saving throw. The DC for this saving throw equals 8 + your Constitution modifier + your proficiency bonus. A creature takes 2d6 acidic damage on a failed save, and half as much damage on a successful one. The damage increases to 3d6 at 6th level, 4d6 at 11th level, and 5d6 at 16th level.</p>
+        </description>
+        <sheet action="Action" usage="unlimited">
+            <description>Exhale destructive energy. Your breath weapon does {{acid-breath:dice count}}d{{acid-breath:dice size}} acidic damage in a 15ft. cone DC {{acid-breath:dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="acid-breath:dc" value="8" />
+            <stat name="acid-breath:dc" value="constitution:modifier" />
+            <stat name="acid-breath:dc" value="proficiency" />
+            <stat name="acid-breath:dice size" vale="6" bonus="dice" />
+            <stat name="acid-breath:dice count" value="2" level="1" />
+            <stat name="acid-breath:dice count" value="1" level="6" />
+            <stat name="acid-breath:dice count" value="1" level="11" />
+            <stat name="acid-breath:dice count" value="1" level="16" />
+        </rules>
+    </element>
+    <element name="Vampire Essence" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_ACID_BLOOD">
+        <description>
+            <p>Your blood is acidic and life-draining to anyone who touches or consumes it.</p>
+        </description>
+        <sheet>
+            <description>Your blood does {{acid-blood:dice count}}d{{acid-blood:dice size}} acidic damage on touch DC {{acid-blood:dc}}.</description>
+        </sheet>
+        <rules>
+            <stat name="acid-blood:dc" value="9" />
+            <stat name="acid-blood:dc" value="constitution:modifier" />
+            <stat name="acid-blood:dc" value="proficiency" />
+            <stat name="acid-blood:dice size" value="6" bonus="dice" />
+            <stat name="acid-blood:dice count" value="2" level="1" />
+            <stat name="acid-blood:dice count" value="1" level="6" />
+            <stat name="acid-blood:dice count" value="1" level="11" />
+            <stat name="acid-blood:dice count" value="1" level="16" />
+        </rules>
+    </element>
+    <element name="Acid Resistance" type="Racial Trait" source="Homebrew" id="ID_RACIAL_TRAIT_ACID_RES"/>
+        <description>
+            <p>You have resistance to acidic damage.</p>
+        </description>
+        <sheet>
+            <description>You have resistance to acidic damage.</description>
+        </sheet>
+    </element>
+
+    <element name="Corrupted Black Dragon" type="Race Variant" source="Homebrew" id="ID_RACE_VARIANT_CORRUPTEDBLACKDRAGON">
+        <supports>Black Dragon</supports>
+        <description>
+            <p>Corrupted Black Dragons have been tainted by their blood, msking them appear sickly and zombielike, with a strange strength. Their eyes consist solely of sclera and are one flat colour.
+            <p>
+                <span class="feature">Ability Score Increase.</span>Your strength score increases by 1.
+                <span class="feature">Skills.</span>You gain proficiency in survival.
+                <span class="feature">Serrated Claws.</span>Add 1d12 damage to every attack you make with your bare claws.
+            </p>
+        </description>
+        <sheet alt="Human" display="false"/>
+        <rules>
+            <stat name="strength" value="1" requirements="!ID_RACE_VARIANT_CORRUPTEDBLACKDRAGON" />
+            <grant type="Proficiency" id="ID_PROFICIENCY_SKILL_SURVIVAL" />
+            <grant type="Racial Trait" id="ID_RACIAL_TRAIT_SERRATED_CLAWS" />
+        </rules>
+    </element>
+    <element name="Serrated Claws" type="Racial Trait" source="Homebrew" requirements="!ID_RACE_VARIANT_CORRUPTEDBLACKDRAGON" id="ID_RACIAL_TRAIT_SERRATED_CLAWS">
+        <description>
+            <p>Your claws are sharper and do extra damage.</p>
+        </description>
+        <sheet>
+            <description>Your claws do extra damage. Add 1d12 damage to every attack you make with your bare claws.
+        </sheet>
+    </element>
+</element.>
